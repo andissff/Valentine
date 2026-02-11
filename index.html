@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Happy Valentine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <!-- Screen 1 - Pembuka -->
+    <section class="screen active" id="screen1" aria-label="Pembuka">
+      <h1 class="big">Happy Valentine <span class="emoji">💖</span></h1>
+      <p class="lead">Aku bikin ini khusus buat kamu</p>
+      <div class="controls">
+        <button class="btn" data-action="next">next ➜</button>
+      </div>
+    </section>
+
+    <!-- Screen 2 - Untuk Kamu (improved) -->
+    <section class="screen" id="screen2" aria-label="Untuk Kamu">
+      <article class="page-card" role="article">
+        <h1 class="page-title">Untuk Kamu 💌</h1>
+        <p class="page-text">
+          Entah kenapa, hal-hal kecil terasa lebih hangat dan seru kalau ada kamu di sana.
+          Jadi… ini cuma caraku bilang makasih. 💖
+        </p>
+
+        <div class="page-actions">
+          <!-- keep inline handler for compatibility with user's snippet -->
+          <button class="btn primary" onclick="nextPage()" aria-label="Lihat">Lihat ➜</button>
+        </div>
+      </article>
+     
+    </section>
+
+    <!-- Screen 3 - Pesan Jujur -->
+    <section class="screen" id="screen3" aria-label="Pesan Jujur">
+      <h2>Aku boleh jujur nggak?</h2>
+        <div class="choices" id="choiceBox">
+          <button class="btn choice" id="yesBtn">Boleh 😊</button>
+          <button class="btn choice no" id="noBtn">Tidak boleh 😜</button>
+        </div>
+      <div id="secret" class="secret" aria-live="polite"></div>
+      <div class="controls">
+        <button class="btn" data-action="back">back </button>
+        <button class="btn" data-action="next">next </button>
+      </div>
+    </section>
+
+    <!-- Screen 4 - Penutup (diperbarui dengan GIF dan tombol) -->
+    <section class="screen" id="screen4" aria-label="Penutup">
+
+      <!-- GIF dulu -->
+      <img src="cat.gif" class="gif" alt="gif lucu">
+
+      <!-- Baru tulisan -->
+      <h2>Makasih udah sampai sini 💕</h2>
+      <p>You can like anything, I like it</p>
+
+      <div class="buttons">
+        <button class="btn" data-action="back">Back</button>
+        <button class="btn" id="finalBtn">Terima kasih</button>
+      </div>
+
+    </section>
+
+    <!-- Simple letter component (user snippet) -->
+    <section class="screen active" id="letterSimple" aria-label="Letter">
+      <div class="wrapper">
+        <div class="letter">
+            <div class="decor" aria-hidden="true">
+              <!-- inline SVG decorative heart (fixed path) -->
+              <svg width="72" height="72" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="heart">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0" stop-color="#ff8fab"/>
+                    <stop offset="1" stop-color="#ff6f91"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#g1)" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6.5 3.5 5 5.5 5c1.54 0 3.04.99 3.57 2.36h1.87C14.46 5.99 15.96 5 17.5 5 19.5 5 21 6.5 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" opacity="0.98"/>
+              </svg>
+            </div>
+          <h1>Happy Valentine 💖</h1>
+          <p class="subtitle">Aku bikin ini khusus buat kamu</p>
+
+          <div class="content">
+            <p>
+              Hai kamu,
+            </p>
+
+            <p>
+              Aku cuma mau bilang… makasih ya udah jadi alasan
+              senyum tiap hari. Hal kecil sih, tapi kamu berarti.
+            </p>
+
+            <p>
+              Jadi… aku boleh jujur nggak? 🙂
+            </p>
+          </div>
+
+          <!-- Cat GIF (external placeholder) -->
+            <!-- (moved) cat GIF was here — now positioned at top of page for fixed placement -->
+
+          <button class="btn-next btn" data-action="next">Buka lanjut ➜</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
